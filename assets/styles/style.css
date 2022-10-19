@@ -1,0 +1,613 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+
+:root {
+  --color-black: #000;
+  --color-black-light: #757575;
+  --color-white-dark: #dddddd;
+  --color-white: #fff;
+  --color-red-light: #f44336;
+  --color-light-blue: #2196f3;
+  --color-green: #009688;
+
+  --padding-sm: 0.8rem 1.6rem;
+  --padding-md: 1.2rem 2.4rem;
+  --padding-section: 6.4rem 1.6rem;
+  --padding-space-md: 1.6rem;
+
+  --header-height: 4.6rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+button,
+input {
+  background-color: unset;
+  color: unset;
+  outline: none;
+  border: none;
+}
+
+:is(input, button):focus {
+  outline: none;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Lato", sSans-serif;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 2;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+input:not([type="submit"]) {
+  width: 100%;
+  padding: 0.8em;
+  border: 1px solid var(--color-black-light);
+  border-radius: 0.2rem;
+}
+
+input:not([type="submit"]):focus {
+  outline: 2px solid var(--color-black);
+}
+
+/* --- utilities */
+.btn {
+  padding: 1em;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: var(--color-black);
+  background-color: var(--color-white-dark);
+}
+
+.btn:focus {
+  outline: 3px solid var(--color-light-blue);
+  outline-offset: 3px;
+}
+
+.text-link {
+  color: var(--color-light-blue);
+  text-decoration: underline;
+}
+
+.modal-layer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-layer.show {
+  display: flex;
+}
+
+.modal-close {
+  --square-size: 6rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--square-size);
+  line-height: var(--square-size);
+  font-size: 2.8rem;
+  text-align: center;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: color 200ms, background-color 200ms;
+}
+
+.modal-close:hover {
+  background-color: var(--color-red-light);
+  color: var(--color-white-dark);
+}
+
+
+/* --- main styles */
+#main-header {
+  min-block-size: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: var(--color-white);
+  background-color: var(--color-black);
+  box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+/* -- navigation -- */
+nav {
+  display: block;
+  height: 100%;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.nav__list {
+  display: block;
+  height: 100%;
+}
+
+.nav__link,
+.nav__toggle,
+.subnav__show,
+.subnav__link {
+  display: block;
+  line-height: var(--header-height);
+  padding-inline: 1.6rem;
+  cursor: pointer;
+}
+
+.nav__list > li:first-child {
+  display: inline-block;
+}
+
+.nav__list > li:not(:first-child) {
+  display: none;
+}
+
+.show li:not(:first-child) {
+  display: block;
+}
+
+:is(.nav__toggle, .nav__link, #subnav, .subnav__link, ):hover {
+  color: var(--color-black);
+  background-color: var(--color-white-dark);
+}
+
+#subnav {
+  display: none;
+  position: relative;
+}
+
+.subnav__list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-white);
+}
+
+#subnav:hover .subnav__list {
+  display: block;
+}
+
+.subnav__link {
+  min-width: 16rem;
+  text-transform: capitalize;
+}
+
+.nav__toggle {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.nav__actions {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.search-box {
+  padding: var(--padding-md);
+  height: 100%;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-box:hover {
+  background-color: var(--color-red-light);
+}
+
+/* -- slider -- */
+
+#slider {
+  width: 100%;
+  margin-top: var(--header-height);
+  display: flex;
+  overflow-x: hidden;
+}
+
+.slide {
+  position: relative;
+  flex: 1 0 100%;
+}
+.slide:not(:first-child) {
+  display: none;
+}
+
+.slider__text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1em;
+  width: 100%;
+  padding: 3.2rem 1.6rem;
+  color: var(--color-white);
+  background-color: transparent;
+  text-align: center;
+  letter-spacing: 0.8px;
+  text-shadow: 1px 1px 2px #333;
+  display: none;
+}
+
+.slider__text h3 {
+  font-size: 2.4rem;
+  margin-bottom: 0.5em;
+}
+
+.slider__text p {
+  font-weight: 700;
+}
+
+/* -- structure for contents */
+.section {
+  max-width: 80rem;
+  padding: var(--padding-section);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 4px;
+}
+
+.slogan {
+  font-style: italic;
+  color: var(--color-black-light);
+  text-align: center;
+  margin-block-end: 1em;
+}
+
+.desc {
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  text-align: justify;
+}
+
+/* band members list */
+.band__members {
+  display: block;
+  padding-top: 1.6rem;
+}
+
+.member {
+  margin-top: 3.6rem;
+  text-align: center;
+}
+
+.member__name {
+  margin-block-end: 1em;
+}
+.member__photo {
+  max-width: 270px;
+  border-radius: 4px;
+}
+
+/* -- tour -- */
+#tour {
+  background-color: var(--color-black);
+}
+
+#tour .title {
+  color: var(--color-white);
+}
+
+.months-info {
+  margin-top: 2.6em;
+  background-color: var(--color-white);
+  color: var(--color-black-light);
+}
+
+.month {
+  padding: 1.6rem;
+}
+
+.month:not(:first-child) {
+  border-top: 1px solid var(--color-white-dark);
+}
+
+.sold-out {
+  background-color: var(--color-red-light);
+  color: var(--color-white);
+  padding-inline: 0.5em;
+  padding-block: 0.2em;
+  margin-left: 1em;
+}
+
+.qnt {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  width: 2.4rem;
+  margin-right: 1em;
+  aspect-ratio: 1.08;
+  border-radius: 50%;
+  display: none;
+}
+
+.available {
+  display: flex;
+  justify-content: space-between;
+}
+
+.available .sold-out {
+  display: none;
+}
+
+.available .qnt {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tours-info {
+  margin-top: calc(2 * var(--padding-space-md));
+  text-align: center;
+}
+
+.tour-place:hover {
+  filter: brightness(50%);
+}
+
+.tour {
+  background-color: var(--color-white);
+  margin-top: 1.6rem;
+  padding-block-end: var(--padding-space-md);
+}
+
+.tour-text {
+  padding-inline: var(--padding-space-md);
+  text-align: start;
+}
+
+.tour-text p {
+  margin-block: 1em;
+}
+
+.tour-name {
+  font-weight: 700;
+}
+
+.tour-date {
+  color: var(--color-black-light);
+}
+
+.tour-buy {
+  margin-inline-start: var(--padding-space-md);
+  padding: 1.2em 1.6em;
+}
+
+#modal-tour-buy {
+  width: min(76.8rem, calc(100% - 3.2rem));
+  background-color: var(--color-white);
+  position: relative;
+  font-size: 1.6rem;
+}
+
+#modal-tour-buy__header,
+#modal-tour-buy__footer {
+  padding: 1.6rem;
+}
+
+#modal-tour-buy__header {
+  background-color: var(--color-green);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 3rem;
+  letter-spacing: 4px;
+  padding: 3.8rem;
+}
+
+#tour-buy-form {
+  padding: 0 1.6rem 3.2rem;
+}
+
+#tour-buy-form label {
+  display: block;
+  margin-top: 1.5em;
+}
+
+#tour-buy-form input {
+  margin-top: 1em;
+}
+
+#tour-buy-form i {
+  min-inline-size: 2rem;
+}
+
+#tour-buy-pay {
+  width: 100%;
+  display: block;
+  padding: 1em;
+  margin-block-start: 1em;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--color-white);
+  background-color: var(--color-green);
+} 
+
+#tour-buy-pay:hover {
+  opacity: 0.8;
+}
+
+#modal-tour-buy__footer {
+  margin-block-end: 1em;
+}
+
+
+/* -- contact form */
+#contact-media {
+  padding-block-start: 3.4rem;
+}
+
+#contact-info {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin-block-end: 2em;
+}
+
+#contact-info i {
+  min-inline-size: 1.25em;
+}
+
+#contact-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 1rem;
+}
+
+/* -- footer -- */
+
+.media-list {
+  font-size: 3.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+footer a:hover {
+  opacity: 0.8;
+}
+
+#copyright a {
+  text-decoration: underline;
+}
+
+footer {
+  color: var(--color-black-light);
+  text-align: center;
+}
+
+@media (min-width: 37.5em) {
+  :root {
+    --header-height: 5.4rem;
+  }
+
+  .hide-lgr-screen {
+    display: none !important;
+  }
+
+  .grid-column-span-2 {
+    grid-column: span 2;
+  }
+  header {
+    display: flex;
+  }
+
+  .nav__list {
+    display: flex;
+  }
+
+  .nav__list > li:not(:first-child) {
+    display: block;
+  }
+
+  #subnav {
+    display: block;
+  }
+
+  .search-box {
+    display: flex;
+  }
+
+  .slider__text {
+    display: block;
+  }
+
+  .band__members {
+    display: flex;
+    justify-content: space-around;
+    padding-top: unset;
+  }
+
+  .member {
+    max-width: 20%;
+  }
+
+  .tours-info {
+    display: flex;
+    gap: 1.6rem;
+    text-align: start;
+  }
+
+  .tour-buy {
+    padding: 0.8em 1.2em;
+  }
+
+  #contact-media {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #contact-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #contact__message {
+    grid-column-start: span 2;
+  }
+
+  #contact__submit {
+    grid-column-start: 2;
+    justify-self: end;
+    padding-inline: 1.6em;
+  }
+
+  .media-list {
+    font-size: 2.4rem;
+    gap: 1.2rem;
+  }
+}
+
+/* --- js handling class */
+.show {
+  display: block;
+}

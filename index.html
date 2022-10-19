@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The Band</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./assets/styles/reset.css">
+  <link rel="stylesheet" href="./assets/styles/style.css">
+  <link rel="stylesheet" href="./assets/styles/responsive.css">
+
+  <!-- Font icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header id="main-header">
+    <nav>
+      <ul class="nav__list">
+        <li><a href="#" class="nav__link">Home</a></li>
+        <li><a href="#band" class="nav__link">Band</a></li>
+        <li><a href="#tour" class="nav__link">Tour</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+        <li><a href="#" class="nav__link hide-lgr-screen">Merch</a></li>
+        <li id="subnav">
+          <div class="subnav__show">
+            More<i class="fa-solid fa-caret-down"></i>
+          </div>
+          <ul class="subnav__list">
+            <li>
+              <a href="#" class="subnav__link">Merchandise</a>
+            </li>
+            <li>
+              <a href="#" class="subnav__link">Extras</a>
+            </li>
+            <li>
+              <a href="#" class="subnav__link">Media</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <section class="nav__actions">
+      <div class="nav__toggle hide-lgr-screen">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+    </section>
+  </header>
+  <main>
+    <section id="slider">
+      <div class="slide">
+        <img src="./assets/images/sliders/chicago.jpg" alt="Chicago" class="slider__img" loading="eager" decoding="sync">
+        <div class="slider__text">
+          <h3>Chicago</h3>
+          <p>Thank you Chicago - a night I will never forget.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="./assets/images/sliders/ny.jpg" alt="Chicago" class="slider__img" loading="eager" decoding="sync">
+        <div class="slider__text">
+          <h3>New York</h3>
+          <p>The atmosphere in New York is awesome.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="./assets/images/sliders/la.jpg" alt="Chicago" class="slider__img" loading="eager" decoding="sync">
+        <div class="slider__text">
+          <h3>Los Angles</h3>
+          <p>We had the best time playing at Venice Beach.</p>
+        </div>
+      </div>
+    </section>
+    <section id="band">
+      <article class="section">
+        <h2 class="title">The Band</h2>
+        <p class="slogan">We love music</p>
+        <p class="desc">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+          in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <ul class="band__members">
+          <li class="member">
+            <p class="member__name">Name</p>
+            <img src="./assets/images/members/bandmember.jpg" alt="Name" class="member__photo" loading="lazy" decoding="async">
+          </li>
+          <li class="member">
+            <p class="member__name">Name</p>
+            <img src="./assets/images/members/bandmember.jpg" alt="Name" class="member__photo" loading="lazy" decoding="async">
+          </li>
+          <li class="member">
+            <p class="member__name">Name</p>
+            <img src="./assets/images/members/bandmember.jpg" alt="Name" class="member__photo" loading="lazy" decoding="async">
+          </li>
+        </ul>
+      </article>
+    </section>
+    <section id="tour">
+      <div class="section">
+        <h3 class="title">Tour dates</h3>
+        <p class="slogan">Remember to book your tickets!</p>
+        <ul class="months-info">
+          <li class="month">
+            September
+            <span class="sold-out">Sold out</span>
+            <span class="qnt">3</span>
+          </li>
+          <li class="month">
+            October
+            <span class="sold-out">Sold out</span>
+            <span class="qnt">3</span>
+          </li>
+          <li class="month available">
+            November
+            <span class="sold-out">Sold out</span>
+            <span class="qnt">3</span>
+          </li>
+        </ul>
+        <ul class="tours-info">
+          <li class="tour">
+            <img src="./assets/images/tours/newyork.jpg" alt="New York" class="tour-place" loading="lazy" decoding="async">
+            <div class="tour-text">
+              <p class="tour-name">New York</p>
+              <p class="tour-date">Fri 27 Nov 2016</p>
+              <p class="desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            </div>
+            <button class="btn tour-buy">Buy Tickets</button>
+          </li>
+          <li class="tour">
+            <img src="./assets/images/tours/paris.jpg" alt="Paris" class="tour-place" loading="lazy" decoding="async">
+            <div class="tour-text">
+              <p class="tour-name">Paris</p>
+              <p class="tour-date">Sat 28 Nov 2016</p>
+              <p class="desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            </div>
+            <button class="btn tour-buy">Buy Tickets</button>
+          </li>
+          <li class="tour">
+            <img src="./assets/images/tours/sanfran.jpg" alt="San Francisco" class="tour-place" loading="lazy" decoding="async">
+            <div class="tour-text">
+              <p class="tour-name">San Francisco</p>
+              <p class="tour-date">Sun 29 Nov 2016</p>
+              <p class="desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            </div>
+            <button class="btn tour-buy link-hover">Buy Tickets</button>
+          </li>
+        </ul>
+      </div>
+      <div class="modal-layer">
+        <section id="modal-tour-buy">
+          <div class="modal-close"  title="escape"><i class="fa-solid fa-xmark"></i></div>
+          <header id="modal-tour-buy__header">
+            <i class="fa-solid fa-suitcase"></i>
+            <h2>Tickets</h2>
+          </header>
+          <main>
+            <form action="#" id="tour-buy-form">
+              <p>
+                <label for="ticket-qnt">
+                  <i class="fa-solid fa-cart-shopping"></i> Tickets, $15 per person
+                  <input type="text" inputmode="numeric" name="buy-ticket" id="ticket-qnt" placeholder="How many?" autofocus>
+                </label>
+              </p>
+              <p>
+                <label for="ticket-qnt">
+                  <i class="fa-solid fa-user"></i> Send to
+                  <input type="email" inputmode="email" name="buy-ticket" id="receive-email" placeholder="Enter email">
+                </label>
+              </p>
+              <a href="#" id="tour-buy-pay">
+                Pay<i class="fa-solid fa-check"></i>
+              </a>
+            </form>
+          </main>
+          <footer id="modal-tour-buy__footer">
+            Need <a href="#" class="text-link">help?</a>
+          </footer>
+        </section>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="section">
+        <h3 class="title">Contact</h3>
+        <p class="slogan">Fan?Drop a note!</p>
+        <section id="contact-media">
+          <address id="contact-info">
+            <p>
+              <i class="fa-solid fa-location-dot"></i> Chicago, US
+            </p>
+            <p>
+              <i class="fa-solid fa-phone"></i> Phone: <a href="tel:+00 151515" class="text-link">+00 151515</a>
+            </p>
+            <p>
+              <i class="fa-solid fa-envelope"></i> Email: <a href="mailto:mail@mail.com" class="text-link">mail@mail.com</a>
+            </p>
+          </address>
+          <form action="#" id="contact-form">
+            <p>
+              <input type="text" inputmode="latin" name="contact" id="contact__name" placeholder="Name">
+            </p>
+            <p>
+              <input type="email" inputmode="email" name="contact" id="contact__email" placeholder="Email">
+            </p>
+            <p  class="grid-column-span-2">
+              <input type="text" inputmode="latin" name="contact" id="contact__message" placeholder="Message">
+            </p>
+            <input type="submit" value="SEND" class="btn" id="contact__submit">
+          </form>
+        </section>
+      </div>
+      <section id="contact-map">
+        <img src="./assets/images/map/map.jpg" alt="Our address on map">
+      </section>
+    </section>
+  </main>
+  <footer>
+   <div class="section">
+      <ul class="media-list">
+        <li>
+          <a href="#" class="media-link"><i class="fa-brands fa-square-facebook"></i></a>
+        </li>
+        <li>
+          <a href="#" class="media-link"><i class="fa-brands fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href="#" class="media-link"><i class="fa-brands fa-snapchat"></i></a>
+        </li>
+        <li>
+          <a href="#" class="media-link"><i class="fa-brands fa-pinterest-p"></i></a>
+        </li>
+        <li>
+          <a href="#" class="media-link"><i class="fa-brands fa-twitter"></i></a>
+        </li>
+        <li>
+          <a href="#" class="media-link"><i class="fa-brands fa-linkedin-in"></i></a>
+        </li>
+      </ul>
+      <p id="copyright">Power by <a href="#">w3.css</a></p>
+   </div>
+  </footer>
+  <script src="./scripts/main.js" defer></script>
+</body>
+
+</html>
